@@ -29,7 +29,15 @@ class Home extends Component {
         </div>
       );
     } else {
-      return <div>There are no posts</div>;
+      return (
+        <div className="flex h-screen">
+          <div className="w-1/4 h-screen bg-gray-200 overflow-hidden"></div>
+          <div className="w-1/2 flex justify-center items-center">
+            <div className="text-2xl text-gray-500">There are no posts</div>
+          </div>
+          <div className="w-1/4 h-screen bg-gray-200 overflow-hidden"></div>
+        </div>
+      );
     }
   }
 }

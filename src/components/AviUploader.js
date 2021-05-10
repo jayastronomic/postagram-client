@@ -9,6 +9,7 @@ const AviUploader = (props) => {
 
   const handleChange = (e) => {
     const fileUploaded = e.target.files[0];
+    console.log(fileUploaded)
     props.handleFile(fileUploaded);
   };
   return (

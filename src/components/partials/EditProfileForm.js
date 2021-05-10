@@ -1,5 +1,7 @@
 import { Component } from "react";
+import  AviUploader from '../AviUploader'
 import { updateAuthUserSuccess, toggleEditProfileModal } from '../../actions/userActions'
+
 
 import { connect } from "react-redux"
 
@@ -49,7 +51,7 @@ class EditProfileForm extends Component {
   };
 
   render() {
-    console.log(this.props)
+    
     return (
       <form onSubmit={this.handleSubmit} className="bg-white w-2/5 h-full flex flex-col rounded-2xl">
         <div className="flex justify-between bg-white items-center pt-2 pb-2 rounded-t-2xl border-b">
@@ -59,7 +61,7 @@ class EditProfileForm extends Component {
                 this.props.toggleEditProfileModal(!this.props.editProfileModal)
               }
               style={{ borderRadius: "50%" }}
-              className="text-blue-500 text-2xl hover:bg-blue-100 px-2"
+              className="text-blue-500 text-2xl hover:bg-blue-100 px-2 focus:outline-none"
             >
               X
             </button>
@@ -75,7 +77,7 @@ class EditProfileForm extends Component {
           {this.props.avatar_url ? <div
             style={{ backgroundImage: `url(${this.props.avatar_url})` }}
             className="avatar"
-          ></div> : <i className="fas fa-user-circle text-gray-500 fa-7x"></i>
+          ></div> : <AviUploader />
 
         }
         </div>
