@@ -41,9 +41,6 @@ const ProfileContainer = (props) => {
           </button>
         </div>
       </div>
-      {/* {props.posts.map((post, index) => {
-        return <PostCard {...post} key={index} />;
-      })} */}
       {props.editProfileModal && <EditProfileModal {...props} />}
     </div>
   );

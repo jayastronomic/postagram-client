@@ -78,7 +78,7 @@ class App extends Component {
           render={(props) => (
             <>
               <Nav history={props.history} handleLogout={this.handleLogout} />
-              <Profile user={this.props.authUser} />
+              <Profile authUser={this.props.authUser} />
             </>
           )}
         />

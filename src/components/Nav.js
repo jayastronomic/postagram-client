@@ -1,4 +1,3 @@
-  
 import React from "react";
 
 import PostModal from "./PostModal";
@@ -47,9 +46,9 @@ const Nav = (props) => {
             onClick={() => props.togglePostModal(true)}
             className="cursor-pointer fas fa-edit fa-lg"
           ></i>
-          <i className="cursor-pointer fas fa-home fa-lg "></i>
-          {/* <i className="cursor-pointer fab fa-facebook-messenger fa-lg"></i> */}
-          {/* <i className="cursor-pointer far fa-compass fa-lg"></i> */}
+          <Link to="/home">
+            <i className="cursor-pointer fas fa-home fa-lg "></i>
+          </Link>
           <i className="cursor-pointer far fa-heart fa-lg"></i>
           <Link to="/profile">
             <i className="cursor-pointer far fa-user-circle fa-lg"></i>

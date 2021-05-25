@@ -6,7 +6,7 @@ export default function posts(state = [], action) {
       const newPost = action.newPost;
       return [newPost, ...state];
     case "DELETE_POST_SUCCESS":
-      const filteredPosts = state.filter((p) => p.id != action.deletedPost.id);
+      const filteredPosts = state.filter((p) => p.id !== action.deletedPost.id);
       return filteredPosts;
     default:
       return state;

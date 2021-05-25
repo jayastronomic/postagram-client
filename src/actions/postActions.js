@@ -25,3 +25,10 @@ export const deletePostSuccess = (obj) => {
     deletedPost: obj,
   };
 };
+
+export const toggleDeletePostModal = (bool, postID) => {
+  return {
+    type: "TOGGLE_DELETE_POST_MODAL",
+    obj: { show: bool, postID: postID },
+  };
+};
