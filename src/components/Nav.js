@@ -49,7 +49,9 @@ const Nav = (props) => {
           <Link to="/home">
             <i className="cursor-pointer fas fa-home fa-lg "></i>
           </Link>
-          <i className="cursor-pointer far fa-heart fa-lg"></i>
+          <Link to="/favorites">
+            <i className="cursor-pointer far fa-heart fa-lg"></i>
+          </Link>
           <Link to="/profile">
             <i className="cursor-pointer far fa-user-circle fa-lg"></i>
           </Link>

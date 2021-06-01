@@ -8,14 +8,15 @@ const API = "http://localhost:3001/api/v1/posts";
 
 class Home extends Component {
   componentDidMount() {
-    fetch(API)
+    fetch(API, { credentials: "include" })
       .then((resp) => resp.json())
       .then((resObj) => {
         if (resObj) {
           console.log(resObj);
           this.props.fetchPostsSuccess(resObj);
         }
-      });
+      })
+      .catch((err) => console.log(err));
   }
 
   render() {
