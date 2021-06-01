@@ -32,3 +32,17 @@ export const toggleDeletePostModal = (bool, postID) => {
     obj: { show: bool, postID: postID },
   };
 };
+
+export const fetchLikesSuccess = (array) => {
+  return {
+    type: "FETCH_LIKES_SUCCESS",
+    likes: array,
+  };
+};
+
+export const deleteLikeSuccess = (obj) => {
+  return {
+    type: "DELETE_LIKE_SUCCESS",
+    deletedLike: obj,
+  };
+};

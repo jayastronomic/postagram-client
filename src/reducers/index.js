@@ -6,6 +6,7 @@ import postModal from "./postModal";
 import editProfileModal from "./editProfileModal";
 import deletePostModal from "./deletePostModal";
 import favorites from "./favorites";
+import likes from "./likes";
 
 export default combineReducers({
   authUser,
@@ -15,4 +16,5 @@ export default combineReducers({
   editProfileModal,
   deletePostModal,
   favorites,
+  likes,
 });

@@ -12,7 +12,6 @@ class Home extends Component {
       .then((resp) => resp.json())
       .then((resObj) => {
         if (resObj) {
-          console.log(resObj);
           this.props.fetchPostsSuccess(resObj);
         }
       })

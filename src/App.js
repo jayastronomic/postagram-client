@@ -7,7 +7,7 @@ import Signup from "./components/registrations/Signup";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
 import Profile from "./components/Profile";
-import Favorites from "./components/Favorites";
+import Likes from "./components/Likes";
 
 import {
   fetchAuthUserSuccess,
@@ -85,11 +85,11 @@ class App extends Component {
         />
         <Route
           exact
-          path="/favorites"
+          path="/likes"
           render={(props) => (
             <>
               <Nav history={props.history} handleLogout={this.handleLogout} />
-              <Favorites authUser={this.props.authUser} />
+              <Likes authUser={this.props.authUser} />
             </>
           )}
         />

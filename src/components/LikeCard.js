@@ -1,24 +1,40 @@
 import React, { useState } from "react";
 import DeletePostModal from "./DeletePostModal";
-import { connect } from "react-redux";
 
+import { connect } from "react-redux";
 import { toggleDeletePostModal } from "../actions/postActions";
 
 const API = "http://localhost:3001/api/v1/users/";
 
-const PostCard = (props) => {
+const LikeCard = (props) => {
   const [like, setLike] = useState(props.liked_by_current_user);
+  const [likeObj, setLikeObj] = useState(null);
 
   const toggleDeletePostModal = () => {
     props.toggleDeletePostModal(!props.deletePostModal.show, props.id);
   };
 
-  const unlikePost = (id) => {
-    fetch(API + props.authUserId + `/likes/${id}`, { method: "DELETE" })
-      .then((resp) => resp.json())
-      .then((resObj) => {
-        setLike(!like);
-      });
+  const unlikePost = () => {
+    if (likeObj) {
+      fetch(API + props.authUserId + `/likes/${likeObj.id}`, {
+        method: "DELETE",
+      })
+        .then((resp) => resp.json())
+        .then((resObj) => {
+          // console.log(resObj);
+          setLikeObj(null);
+          setLike(!like);
+        });
+    } else {
+      fetch(API + props.authUserId + `/likes/${props.post_like_id}`, {
+        method: "DELETE",
+      })
+        .then((resp) => resp.json())
+        .then((resObj) => {
+          // console.log(resObj);
+          setLike(!like);
+        });
+    }
   };
 
   const likePost = () => {
@@ -41,11 +57,9 @@ const PostCard = (props) => {
     fetch(API + props.authUserId + "/likes", payload)
       .then((resp) => resp.json())
       .then((resObj) => {
-        if (resObj.status === "ALREADY_LIKED") {
-          unlikePost(resObj.like_id);
-        } else {
-          setLike(!like);
-        }
+        // console.log(resObj);
+        setLikeObj(resObj);
+        setLike(!like);
       });
   };
 
@@ -63,7 +77,7 @@ const PostCard = (props) => {
           <i className="far fa-comment text-gray-500"></i>
           {like ? (
             <i
-              onClick={() => likePost()}
+              onClick={() => unlikePost()}
               className="far fas fa-heart text-red-500 cursor-pointer hover:text-red-500 hover:bg-pink-100 p-2 rounded-full transition duration-200 ease-in-out"
             ></i>
           ) : (
@@ -96,4 +110,4 @@ const mapDispatchToProps = {
   toggleDeletePostModal,
 };
 
-export default connect(mapStatetoProps, mapDispatchToProps)(PostCard);
+export default connect(mapStatetoProps, mapDispatchToProps)(LikeCard);

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import {
   deletePostSuccess,
+  deleteLikeSuccess,
   toggleDeletePostModal,
 } from "../actions/postActions";
 
@@ -12,7 +13,11 @@ const DeletePostModal = (props) => {
   const handleDelete = () => {
     fetch(API + props.deletePostModal.postID, { method: "DELETE" })
       .then((resp) => resp.json())
-      .then((resObj) => props.deletePostSuccess(resObj));
+      .then((resObj) => {
+        console.log(resObj);
+        props.deleteLikeSuccess(resObj);
+        props.deletePostSuccess(resObj);
+      });
 
     toggleDeletePostModal();
   };
@@ -59,6 +64,7 @@ const mapStatetoProps = (state) => {
 const mapDispatchToProps = {
   deletePostSuccess,
   toggleDeletePostModal,
+  deleteLikeSuccess,
 };
 
 export default connect(mapStatetoProps, mapDispatchToProps)(DeletePostModal);
