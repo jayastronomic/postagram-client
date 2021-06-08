@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/Nav.css";
 
 import PostModal from "./PostModal";
 
@@ -27,7 +28,7 @@ const Nav = (props) => {
 
   return (
     <>
-      <nav className="flex justify-around border-b p-2 items-center lg:-space-x-72">
+      <nav className="flex justify-around border-b p-2 items-center lg:-space-x-72 top-0  sticky">
         <div className="flex">
           <Link to="/home">
             <h1 className="pacifico text-2xl active:text-gray-300 cursor-pointer">
@@ -59,7 +60,7 @@ const Nav = (props) => {
             onClick={logOut}
             className="p-2 bg-blue-400 text-white rounded focus:outline-none"
           >
-            Log Off {props.username}
+            Log Off
           </button>
         </div>
       </nav>

@@ -22,10 +22,11 @@ class Home extends Component {
     if (this.props.posts.length > 0) {
       return (
         <div className="flex h-screen">
-          <div className="w-1/4 h-screen bg-gray-200 overflow-hidden"></div>
-          <PostsContainer posts={this.props.posts} />
-          <div className="w-1/4 h-screen bg-gray-200 overflow-hidden"></div>
-          {/* <PostsContainer posts={this.props.posts} /> */}
+          <div className="w-1/4 h-screen overflow-hidden border-gray-200 border-r"></div>
+          <div className="w-1/2 h-screen overflow-auto border-gray-200">
+            <PostsContainer posts={this.props.posts} />
+          </div>
+          <div className="w-1/4 h-screen overflow-hidden border-gray-200 border-l"></div>
         </div>
       );
     } else {

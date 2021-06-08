@@ -81,6 +81,8 @@ class LoginPartial extends Component {
         password: "",
         showPassword: false,
       });
+
+      this.redirect();
     }
   };
 

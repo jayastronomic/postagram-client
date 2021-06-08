@@ -46,3 +46,10 @@ export const deleteLikeSuccess = (obj) => {
     deletedLike: obj,
   };
 };
+
+export const fetchUserPostsSuccess = (array) => {
+  return {
+    type: "FETCH_USER_POSTS_SUCCESS",
+    userPosts: array,
+  };
+};

@@ -27,7 +27,7 @@ const DeletePostModal = (props) => {
   };
 
   return (
-    <div className="inset-0 bg-black bg-opacity-25 absolute flex justify-center items-center">
+    <div className="inset-0 bg-black bg-opacity-75 absolute flex justify-center items-center">
       <div className="p-10 bg-white flex flex-col w-3/12 items-center rounded-xl">
         <h1 className="text-xl font-bold">Delete Post?</h1>
         <p className="text-gray-500">

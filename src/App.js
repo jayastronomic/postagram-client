@@ -8,6 +8,8 @@ import Home from "./components/Home";
 import Nav from "./components/Nav";
 import Profile from "./components/Profile";
 import Likes from "./components/Likes";
+import PostPage from "./components/PostPage";
+import UserPage from "./components/UserPage";
 
 import {
   fetchAuthUserSuccess,
@@ -49,50 +51,72 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Route
-          exact
-          path="/signup"
-          render={(props) => (
-            <Signup history={props.history} handleLogin={this.handleLogin} />
-          )}
-        />
-        <Route
-          exact
-          path="/"
-          render={(props) => (
-            <Login history={props.history} handleLogin={this.handleLogin} />
-          )}
-        />
-        <Route
-          exact
-          path="/home"
-          render={(props) => (
-            <>
-              <Nav history={props.history} handleLogout={this.handleLogout} />
-              <Home />
-            </>
-          )}
-        />
-        <Route
-          exact
-          path="/profile"
-          render={(props) => (
-            <>
-              <Nav history={props.history} handleLogout={this.handleLogout} />
-              <Profile authUser={this.props.authUser} />
-            </>
-          )}
-        />
-        <Route
-          exact
-          path="/likes"
-          render={(props) => (
-            <>
-              <Nav history={props.history} handleLogout={this.handleLogout} />
-              <Likes authUser={this.props.authUser} />
-            </>
-          )}
-        />
+        <Switch>
+          <Route
+            exact
+            path="/signup"
+            render={(props) => (
+              <Signup history={props.history} handleLogin={this.handleLogin} />
+            )}
+          />
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <Login history={props.history} handleLogin={this.handleLogin} />
+            )}
+          />
+          <Route
+            exact
+            path="/home"
+            render={(props) => (
+              <>
+                <Nav history={props.history} handleLogout={this.handleLogout} />
+                <Home />
+              </>
+            )}
+          />
+          <Route
+            exact
+            path="/profile"
+            render={(props) => (
+              <>
+                <Nav history={props.history} handleLogout={this.handleLogout} />
+                <Profile authUser={this.props.authUser} />
+              </>
+            )}
+          />
+          <Route
+            exact
+            path="/likes"
+            render={(props) => (
+              <>
+                <Nav history={props.history} handleLogout={this.handleLogout} />
+                <Likes authUser={this.props.authUser} />
+              </>
+            )}
+          />
+          <Route
+            exact
+            path="/:username/post/:id"
+            render={(props) => (
+              <>
+                <Nav history={props.history} />
+                <PostPage {...props.location} />
+              </>
+            )}
+          />
+          <Route
+            exact
+            path="/:username"
+            render={(props) => (
+              <>
+                <Nav history={props.history} handleLogout={this.handleLogout} />
+                <UserPage {...props.location} />
+              </>
+            )}
+          />
+        </Switch>
       </Router>
     );
   }
