@@ -28,7 +28,7 @@ const Nav = (props) => {
 
   return (
     <>
-      <nav className="flex justify-around border-b p-2 items-center lg:-space-x-72 top-0  sticky">
+      <nav className="flex justify-around border-b p-2 items-center lg:-space-x-72 top-0  sticky bg-white">
         <div className="flex">
           <Link to="/home">
             <h1 className="pacifico text-2xl active:text-gray-300 cursor-pointer">
@@ -55,6 +55,9 @@ const Nav = (props) => {
           </Link>
           <Link to="/profile">
             <i className="cursor-pointer far fa-user-circle fa-lg"></i>
+          </Link>
+          <Link to="/follow">
+            <i class="fas fa-user-plus"></i>
           </Link>
           <button
             onClick={logOut}

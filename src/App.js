@@ -10,6 +10,7 @@ import Profile from "./components/Profile";
 import Likes from "./components/Likes";
 import PostPage from "./components/PostPage";
 import UserPage from "./components/UserPage";
+import FollowPage from "./components/FollowPage";
 
 import {
   fetchAuthUserSuccess,
@@ -93,6 +94,16 @@ class App extends Component {
               <>
                 <Nav history={props.history} handleLogout={this.handleLogout} />
                 <Likes authUser={this.props.authUser} />
+              </>
+            )}
+          />
+          <Route
+            exact
+            path="/follow"
+            render={() => (
+              <>
+                <Nav />
+                <FollowPage />
               </>
             )}
           />

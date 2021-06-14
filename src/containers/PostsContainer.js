@@ -1,6 +1,5 @@
 import React from "react";
 import PostCard from "../components/PostCard";
-import { Link } from "react-router-dom";
 
 const PostsContainer = (props) => {
   return (

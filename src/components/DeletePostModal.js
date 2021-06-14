@@ -5,6 +5,7 @@ import {
   deletePostSuccess,
   deleteLikeSuccess,
   toggleDeletePostModal,
+  deleteAuthUserPostSuccess,
 } from "../actions/postActions";
 
 const API = "http://localhost:3001/api/v1/posts/";
@@ -17,6 +18,7 @@ const DeletePostModal = (props) => {
         console.log(resObj);
         props.deleteLikeSuccess(resObj);
         props.deletePostSuccess(resObj);
+        props.deleteAuthUserPostSuccess(resObj);
       });
 
     toggleDeletePostModal();
@@ -65,6 +67,7 @@ const mapDispatchToProps = {
   deletePostSuccess,
   toggleDeletePostModal,
   deleteLikeSuccess,
+  deleteAuthUserPostSuccess,
 };
 
 export default connect(mapStatetoProps, mapDispatchToProps)(DeletePostModal);

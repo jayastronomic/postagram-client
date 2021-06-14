@@ -51,7 +51,6 @@ class SignupPartial extends Component {
       .then((resp) => resp.json())
       .then((resObj) => {
         if (resObj.status === "SUCCESS") {
-          console.log(resObj);
           this.props.handleLogin(resObj);
         } else {
           console.log(resObj);

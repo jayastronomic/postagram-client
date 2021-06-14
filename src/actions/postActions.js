@@ -53,3 +53,24 @@ export const fetchUserPostsSuccess = (array) => {
     userPosts: array,
   };
 };
+
+export const fetchAuthUserPostsSuccess = (array) => {
+  return {
+    type: "FETCH_AUTH_USER_POSTS_SUCCESS",
+    authUserPosts: array,
+  };
+};
+
+export const createAuthUserPostsSuccess = (obj) => {
+  return {
+    type: "CREATE_AUTH_USER_POST_SUCCESS",
+    authUserPost: obj,
+  };
+};
+
+export const deleteAuthUserPostSuccess = (obj) => {
+  return {
+    type: "DELETE_AUTH_USER_POST_SUCCESS",
+    deletedAuthUserPost: obj,
+  };
+};

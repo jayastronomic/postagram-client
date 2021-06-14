@@ -25,7 +25,7 @@ class UserPage extends Component {
             <div className="flex justify-between items-center">
               <i className="fas fa-7x fa-user-circle text-gray-500"></i>
               <button className="text-blue-400 border border-blue-400 h-10 items-center text-white font-bold px-4 py-2 rounded-full focus:outline-none hover:bg-blue-100 transition-colors ease-out delay-75">
-                Button
+                Follow
               </button>
             </div>
             <div className="flex flex-col">

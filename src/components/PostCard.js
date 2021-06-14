@@ -76,7 +76,7 @@ const PostCard = (props) => {
       <div className="p-2 flex flex-col w-full">
         <span>
           <Link
-            disable
+            disable="true"
             className="text-gray-500"
             to={
               props.authUserId === props.user_id

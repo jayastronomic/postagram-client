@@ -5,9 +5,12 @@ import posts from "./posts";
 import postModal from "./postModal";
 import editProfileModal from "./editProfileModal";
 import deletePostModal from "./deletePostModal";
-import favorites from "./favorites";
 import likes from "./likes";
 import userPosts from "./userPosts";
+import authUserPosts from "./authUserPosts";
+import users from "./users";
+import authUserFollowers from "./authUserFollowers";
+import authUserFollowings from "./authUserFollowings";
 
 export default combineReducers({
   authUser,
@@ -16,7 +19,10 @@ export default combineReducers({
   postModal,
   editProfileModal,
   deletePostModal,
-  favorites,
   likes,
   userPosts,
+  authUserPosts,
+  users,
+  authUserFollowers,
+  authUserFollowings,
 });

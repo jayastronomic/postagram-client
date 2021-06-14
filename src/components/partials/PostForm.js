@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import { togglePostModal, createPostSuccess } from "../../actions/postActions";
+import {
+  togglePostModal,
+  createPostSuccess,
+  createAuthUserPostsSuccess,
+} from "../../actions/postActions";
 
 const API = "http://localhost:3001/api/v1/posts";
 
@@ -39,6 +43,7 @@ class PostForm extends Component {
       .then((resp) => resp.json())
       .then((resObj) => {
         this.props.createPostSuccess(resObj);
+        this.props.createAuthUserPostsSuccess(resObj);
       })
       .catch((err) => console.log(err));
 
@@ -77,6 +82,10 @@ class PostForm extends Component {
   }
 }
 
-const mapDispatchToProps = { togglePostModal, createPostSuccess };
+const mapDispatchToProps = {
+  togglePostModal,
+  createPostSuccess,
+  createAuthUserPostsSuccess,
+};
 
 export default connect(null, mapDispatchToProps)(PostForm);
